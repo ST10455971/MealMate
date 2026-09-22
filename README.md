@@ -59,7 +59,7 @@ Screenshots
 
 Video Demonstration
 
-Video Link: *(Paste your Google Drive or YouTube link here.)*
+Video Link: https://youtu.be/uw0j5gIsFJY?si=jVCWgZDaAU8blkmE 
 
 Installation
 
