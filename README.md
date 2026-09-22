@@ -47,15 +47,15 @@ TheMealDB API provides recipe information including recipe names, ingredients, c
 
 Screenshots
 <img width="374" height="800" alt="mealplanscreen" src="https://github.com/user-attachments/assets/f70ee675-af04-40c3-bc12-1c363bcc6b99" />
-<img width="748" height="1601" alt="shppongscreen" src="https://github.com/user-attachments/assets/c3dd3cc5-de21-4f5c-bd7a-a3f75be20c2d" />
-<img width="748" height="1601" alt="favoritescreen" src="https://github.com/user-attachments/assets/56ed71f6-0885-402a-bb4b-8405bad78040" />
-<img width="748" height="1601" alt="settingscreen" src="https://github.com/user-attachments/assets/f51d2772-f7bc-45e5-927c-da4b81839cfb" />
-<img width="748" height="1601" alt="splashscreen" src="https://github.com/user-attachments/assets/c707727c-bd3f-46d6-adc3-4fc14a245573" />
-<img width="748" height="1601" alt="loginscreen" src="https://github.com/user-attachments/assets/83e88ef9-725c-49e6-b818-3ca5da9e21c7" />
-<img width="748" height="1601" alt="registerscreen" src="https://github.com/user-attachments/assets/7f866208-53d5-4d81-884f-7259a4dc74de" />
-<img width="748" height="1601" alt="dashboardscreen" src="https://github.com/user-attachments/assets/acf87daf-5454-4cf6-98b9-3ec06a8aef21" />
-<img width="748" height="1601" alt="recipescreen" src="https://github.com/user-attachments/assets/1eb221b0-a3de-47aa-8b2c-ede11a9d02b9" />
-<img width="748" height="1601" alt="recipedetailscreen" src="https://github.com/user-attachments/assets/25f1a97e-d530-4c33-9393-da7ffdfd936f" />
+<img width="374" height="800" alt="shppongscreen" src="https://github.com/user-attachments/assets/c3dd3cc5-de21-4f5c-bd7a-a3f75be20c2d" />
+<img width="374" height="800" alt="favoritescreen" src="https://github.com/user-attachments/assets/56ed71f6-0885-402a-bb4b-8405bad78040" />
+<img width="374" height="800" alt="settingscreen" src="https://github.com/user-attachments/assets/f51d2772-f7bc-45e5-927c-da4b81839cfb" />
+<img width="374" height="800" alt="splashscreen" src="https://github.com/user-attachments/assets/c707727c-bd3f-46d6-adc3-4fc14a245573" />
+<img width="374" height="800" alt="loginscreen" src="https://github.com/user-attachments/assets/83e88ef9-725c-49e6-b818-3ca5da9e21c7" />
+<img width="374" height="800" alt="registerscreen" src="https://github.com/user-attachments/assets/7f866208-53d5-4d81-884f-7259a4dc74de" />
+<img width="374" height="800" alt="dashboardscreen" src="https://github.com/user-attachments/assets/acf87daf-5454-4cf6-98b9-3ec06a8aef21" />
+<img width="374" height="800" alt="recipescreen" src="https://github.com/user-attachments/assets/1eb221b0-a3de-47aa-8b2c-ede11a9d02b9" />
+<img width="374" height="800" alt="recipedetailscreen" src="https://github.com/user-attachments/assets/25f1a97e-d530-4c33-9393-da7ffdfd936f" />
 
 Video Demonstration
 
