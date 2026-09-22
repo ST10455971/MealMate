@@ -46,7 +46,7 @@ REST API Used
 TheMealDB API provides recipe information including recipe names, ingredients, categories, cuisines, and cooking instructions.
 
 Screenshots
-<img width="748" height="1601" alt="mealplanscreen" src="https://github.com/user-attachments/assets/f70ee675-af04-40c3-bc12-1c363bcc6b99" />
+<img width="374" height="800" alt="mealplanscreen" src="https://github.com/user-attachments/assets/f70ee675-af04-40c3-bc12-1c363bcc6b99" />
 <img width="748" height="1601" alt="shppongscreen" src="https://github.com/user-attachments/assets/c3dd3cc5-de21-4f5c-bd7a-a3f75be20c2d" />
 <img width="748" height="1601" alt="favoritescreen" src="https://github.com/user-attachments/assets/56ed71f6-0885-402a-bb4b-8405bad78040" />
 <img width="748" height="1601" alt="settingscreen" src="https://github.com/user-attachments/assets/f51d2772-f7bc-45e5-927c-da4b81839cfb" />
