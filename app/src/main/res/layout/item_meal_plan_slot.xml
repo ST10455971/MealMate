@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardMealSlot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8.dp"
+    android:layout_marginVertical="6.dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="10.dp"
+    app:cardElevation="2.dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12.dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/ivMealImage"
+            android:layout_width="60.dp"
+            android:layout_height="60.dp"
+            android:scaleType="centerCrop"
+            android:background="@color/light_grey"
+            android:contentDescription="Meal image" />
+
+        <LinearLayout
+            android:layout_width="0.dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12.dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSlotTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="14.sp"
+                android:textColor="@color/green_primary" />
+
+            <TextView
+                android:id="@+id/tvMealName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15.sp"
+                android:textColor="@color/dark_text" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAddOrChange"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:textColor="@color/orange_accent"
+            android:textSize="12.sp" />
+
+        <ImageButton
+            android:id="@+id/btnRemoveMeal"
+            android:layout_width="36.dp"
+            android:layout_height="36.dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_delete"
+            android:contentDescription="Remove meal" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

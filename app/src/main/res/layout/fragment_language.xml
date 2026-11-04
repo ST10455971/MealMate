@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cream_background"
+    android:padding="16.dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48.dp"
+            android:layout_height="48.dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_revert"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_language"
+            android:textSize="22.sp"
+            android:textStyle="bold"
+            android:textColor="@color/green_primary"
+            android:layout_marginStart="8.dp" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/rgLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20.dp">
+
+        <RadioButton
+            android:id="@+id/rbEnglish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:textColor="@color/dark_text"
+            android:padding="12.dp" />
+
+        <RadioButton
+            android:id="@+id/rbZulu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="isiZulu"
+            android:textColor="@color/dark_text"
+            android:padding="12.dp" />
+
+        <RadioButton
+            android:id="@+id/rbXhosa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="isiXhosa"
+            android:textColor="@color/dark_text"
+            android:padding="12.dp" />
+
+        <RadioButton
+            android:id="@+id/rbAfrikaans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Afrikaans"
+            android:textColor="@color/dark_text"
+            android:padding="12.dp" />
+
+        <RadioButton
+            android:id="@+id/rbSesotho"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sesotho"
+            android:textColor="@color/dark_text"
+            android:padding="12.dp" />
+    </RadioGroup>
+</LinearLayout>

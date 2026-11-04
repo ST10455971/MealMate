@@ -43,9 +43,12 @@ androidx-compose-material-icons-core = { group = "androidx.compose.material", na
 androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 firebase-auth = { module = "com.google.firebase:firebase-auth", version.ref = "firebaseAuth" }
+play-services-auth = { module = "com.google.android.gms:play-services-auth", version = "21.2.0" }
 retrofit = {module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit"}
 gson = {module = "com.squareup.retrofit2:converter-gson", version.ref = "gson"}
 coil = {module = "io.coil-kt:coil-compose", version.ref = "coil"}
+coil-base = {module = "io.coil-kt:coil", version.ref = "coil"}
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version = "1.8.5" }
 room-runtime = {module = "androidx.room:room-runtime", version.ref = "room"}
 room-ktx = {module = "androidx.room:room-ktx", version.ref = "room"}
 room-compiler = {module = "androidx.room:room-compiler", version.ref = "room"}

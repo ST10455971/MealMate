@@ -1,12 +1,12 @@
 package com.example.mealmate.ui.viewmodel
 
 import android.app.Application
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mealmate.data.local.AppDatabase
+import com.example.mealmate.data.local.PantryEntity
+import com.example.mealmate.data.local.RecipeRatingEntity
 import com.example.mealmate.data.model.Meal
 import com.example.mealmate.data.repository.MealRepository
 import com.example.mealmate.data.repository.RecipeRepository
@@ -21,59 +21,91 @@ class MealViewModel(application: Application) : AndroidViewModel(application) {
     private val recipeRepository = RecipeRepository()
     private val auth = FirebaseAuth.getInstance()
 
-    // Monitor auth state to provide user-specific data
-    private val _userId = MutableStateFlow(auth.currentUser?.uid ?: "")
-    
+    private fun getEffectiveUserId(): String {
+        val uid = auth.currentUser?.uid
+        return if (!uid.isNullOrEmpty()) uid else "default_user"
+    }
+
+    private val _userId = MutableStateFlow(getEffectiveUserId())
+
+    private val _searchResults = MutableStateFlow<List<Meal>>(emptyList())
+    val searchResults: StateFlow<List<Meal>> = _searchResults.asStateFlow()
+
+    private val _isLoading = MutableStateFlow(false)
+    val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
+
+    private val _error = MutableStateFlow<String?>(null)
+    val error: StateFlow<String?> = _error.asStateFlow()
+
     init {
         val database = AppDatabase.getDatabase(application)
         mealRepository = MealRepository(database.mealDao())
-        
-        // Update userId flow whenever auth state changes
+
         auth.addAuthStateListener { firebaseAuth ->
-            _userId.value = firebaseAuth.currentUser?.uid ?: ""
+            _userId.value = firebaseAuth.currentUser?.uid ?: "default_user"
         }
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val favorites: StateFlow<List<Meal>> = _userId
         .flatMapLatest { id ->
-            if (id.isEmpty()) flowOf(emptyList())
-            else mealRepository.getFavorites(id)
+            mealRepository.getFavorites(id)
         }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val mealPlans: StateFlow<Map<String, Map<String, Meal>>> = _userId
         .flatMapLatest { id ->
-            if (id.isEmpty()) flowOf(emptyMap())
-            else mealRepository.getMealPlans(id)
+            mealRepository.getMealPlans(id)
         }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyMap())
 
-    var searchResults by mutableStateOf(listOf<Meal>())
-        private set
+    @OptIn(ExperimentalCoroutinesApi::class)
+    val pantryItems: StateFlow<List<PantryEntity>> = _userId
+        .flatMapLatest { id ->
+            mealRepository.getPantryItems(id)
+        }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
-    var isLoading by mutableStateOf(false)
-        private set
+    fun addPantryItem(name: String, quantity: String) {
+        val id = _userId.value
+        viewModelScope.launch {
+            mealRepository.addPantryItem(id, name, quantity)
+        }
+    }
 
-    var error by mutableStateOf<String?>(null)
-        private set
+    fun removePantryItem(item: PantryEntity) {
+        viewModelScope.launch {
+            mealRepository.removePantryItem(item)
+        }
+    }
+
+    fun getRecipeRatings(recipeId: String): Flow<List<RecipeRatingEntity>> =
+        mealRepository.getRecipeRatings(recipeId)
+
+    fun addRecipeRating(recipeId: String, rating: Float, review: String) {
+        viewModelScope.launch {
+            mealRepository.addRecipeRating(recipeId, rating, review)
+        }
+    }
 
     fun searchRecipes(query: String) {
+        Log.d("MealMateAPI", "Searching recipes: $query")
         viewModelScope.launch {
-            isLoading = true
-            error = null
+            _isLoading.value = true
+            _error.value = null
             try {
                 val response = recipeRepository.searchRecipes(query)
-                searchResults = response.meals ?: emptyList()
-                if (searchResults.isEmpty()) {
-                    error = "No recipes found for '$query'"
+                val list = response.meals ?: emptyList()
+                _searchResults.value = list
+                if (list.isEmpty()) {
+                    _error.value = "No recipes found for '$query'"
                 }
             } catch (e: Exception) {
-                error = "Unable to load recipes. Please check your internet connection."
-                searchResults = emptyList()
+                _error.value = "Unable to load recipes. Please check your internet connection."
+                _searchResults.value = emptyList()
             } finally {
-                isLoading = false
+                _isLoading.value = false
             }
         }
     }
@@ -89,37 +121,30 @@ class MealViewModel(application: Application) : AndroidViewModel(application) {
 
     fun addFavorite(meal: Meal) {
         val id = _userId.value
-        if (id.isNotEmpty()) {
-            viewModelScope.launch {
-                mealRepository.addFavorite(id, meal)
-            }
+        viewModelScope.launch {
+            mealRepository.addFavorite(id, meal)
         }
     }
 
     fun removeFavorite(meal: Meal) {
         val id = _userId.value
-        if (id.isNotEmpty()) {
-            viewModelScope.launch {
-                mealRepository.removeFavorite(id, meal)
-            }
+        viewModelScope.launch {
+            mealRepository.removeFavorite(id, meal)
         }
     }
 
     fun addMealPlan(day: String, type: String, meal: Meal) {
+        Log.d("MealPlanner", "Meal added for $day")
         val id = _userId.value
-        if (id.isNotEmpty()) {
-            viewModelScope.launch {
-                mealRepository.addMealPlan(id, day, type, meal)
-            }
+        viewModelScope.launch {
+            mealRepository.addMealPlan(id, day, type, meal)
         }
     }
 
     fun removeMealPlan(day: String, type: String) {
         val id = _userId.value
-        if (id.isNotEmpty()) {
-            viewModelScope.launch {
-                mealRepository.removeMealPlan(id, day, type)
-            }
+        viewModelScope.launch {
+            mealRepository.removeMealPlan(id, day, type)
         }
     }
 }

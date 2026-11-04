@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MealMate</string>
+    <string name="logo_content_description">Ilogo ye-MealMate</string>
+    <string name="welcome_back">Wamkelekile Emva!</string>
+    <string name="create_account">Cwangcisa I-Akhawunti</string>
+    <string name="full_name">Igama Apheleleyo</string>
+    <string name="email_address">I-Imeleyi</string>
+    <string name="password">Iphasiwedi</string>
+    <string name="hide_password">Fihla iphasiwedi</string>
+    <string name="show_password">Bonisa iphasiwedi</string>
+    <string name="forgot_password">Ukhohlwe Iphasiwedi?</string>
+    <string name="login">Ngena</string>
+    <string name="continue_with_google">Ngena nge-Google</string>
+    <string name="dont_have_account">Aunayo i-akhawunti? Bhalisa</string>
+    <string name="already_have_account">Usunayo i-akhawunti? Ngena</string>
+    <string name="register">Bhalisa</string>
+
+    <string name="nav_home">Ikhaya</string>
+    <string name="nav_planner">Umrhumo</string>
+    <string name="nav_favorites">Izigqibo</string>
+    <string name="nav_settings">Iisethingi</string>
+
+    <string name="explore_recipes">Khangela Ii-Iiresiphi</string>
+    <string name="search_hint">Khangela ii-iresiphi&#8230;</string>
+    <string name="trending_this_hour">🔥 Ezidumileyo Kule Yure</string>
+    <string name="categories">Iindidi</string>
+    <string name="meal_planner">Umrhumo Wezidlo</string>
+    <string name="shopping_list">Uluhlu Lokuthenga</string>
+    <string name="select_language">Khetha Ulwimi</string>
+    <string name="settings">Iisethingi</string>
+    <string name="profile">Iphrofayile</string>
+    <string name="notifications">Izaziso</string>
+    <string name="language">Ulwimi</string>
+    <string name="dietary_preferences">Izigqibo Zokutya</string>
+    <string name="sync_status">Isimo Sokuvumelanisa</string>
+    <string name="online_synced">Inthanethi - Kuvunyelaniswe</string>
+    <string name="offline_roomdb">Imodi Yengaxhunywanga - RoomDB</string>
+    <string name="logout">Phuma</string>
+
+    <string name="ingredients">Izithako</string>
+    <string name="instructions">Imiyalelo</string>
+    <string name="add_to_meal_planner">Faka Emrhumeni</string>
+    <string name="confirm_addition">Qinisekisa Ukufaka</string>
+    <string name="favorite_recipes">Ii-iresiphi Ezikhethiweyo</string>
+    <string name="empty_favorites">Akukho ii-iresiphi ezikhethiweyo okwangoku!</string>
+    <string name="shopping_list_empty">Uluhlu lwakho lokuthenga lulambatha!</string>
+</resources>

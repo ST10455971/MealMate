@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/cream_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20.dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="48.dp"
+                android:layout_height="48.dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cooking Mode"
+                android:textSize="22.sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_primary"
+                android:layout_marginStart="8.dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvRecipeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18.sp"
+            android:textStyle="bold"
+            android:textColor="@color/green_light"
+            android:layout_marginTop="16.dp" />
+
+        <!-- Step Guide Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16.dp"
+            app:cardCornerRadius="12.dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="3.dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16.dp">
+
+                <TextView
+                    android:id="@+id/tvStepTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Step 1"
+                    android:textSize="16.sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_primary" />
+
+                <TextView
+                    android:id="@+id/tvStepInstruction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15.sp"
+                    android:textColor="@color/dark_text"
+                    android:layout_marginTop="8.dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16.dp">
+
+                    <Button
+                        android:id="@+id/btnPrevStep"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0.dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Previous"
+                        android:textColor="@color/green_primary"
+                        android:layout_marginEnd="8.dp" />
+
+                    <Button
+                        android:id="@+id/btnNextStep"
+                        android:layout_width="0.dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Next Step"
+                        android:backgroundTint="@color/orange_accent"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Kitchen Timer Section -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20.dp"
+            app:cardCornerRadius="12.dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="3.dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16.dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⏱ Kitchen Timer"
+                    android:textSize="18.sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_primary" />
+
+                <TextView
+                    android:id="@+id/tvTimerDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="05:00"
+                    android:textSize="40.sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_text"
+                    android:layout_marginTop="12.dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12.dp">
+
+                    <Button
+                        android:id="@+id/btnAdd1m"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+1m"
+                        android:layout_marginEnd="8.dp" />
+
+                    <Button
+                        android:id="@+id/btnAdd5m"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+5m"
+                        android:layout_marginEnd="8.dp" />
+
+                    <Button
+                        android:id="@+id/btnAdd10m"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+10m" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16.dp">
+
+                    <Button
+                        android:id="@+id/btnStartTimer"
+                        android:layout_width="0.dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Start"
+                        android:backgroundTint="@color/orange_accent"
+                        android:textColor="@color/white"
+                        android:layout_marginEnd="8.dp" />
+
+                    <Button
+                        android:id="@+id/btnResetTimer"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0.dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Reset"
+                        android:textColor="@color/green_primary" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>

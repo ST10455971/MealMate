@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/cream_background"
+    android:padding="24.dp">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="160.dp"
+        android:layout_height="160.dp"
+        android:src="@drawable/mealmate_logo"
+        android:contentDescription="MealMate Logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MealMate"
+        android:textSize="32.sp"
+        android:textStyle="bold"
+        android:textColor="@color/green_primary"
+        android:layout_marginTop="16.dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Intelligent Meal Planner"
+        android:textSize="16.sp"
+        android:textColor="@color/green_light"
+        android:layout_marginTop="8.dp" />
+</LinearLayout>

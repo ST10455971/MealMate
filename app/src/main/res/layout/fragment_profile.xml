@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/cream_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20.dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="48.dp"
+                android:layout_height="48.dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Profile"
+                android:textSize="22.sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_primary"
+                android:layout_marginStart="8.dp" />
+        </LinearLayout>
+
+        <!-- User Information Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20.dp"
+            app:cardCornerRadius="12.dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="3.dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16.dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Full Name"
+                    android:textSize="13.sp"
+                    android:textColor="@color/green_light" />
+
+                <EditText
+                    android:id="@+id/etProfileName"
+                    android:layout_width="match_parent"
+                    android:layout_height="48.dp"
+                    android:hint="Full Name"
+                    android:inputType="textPersonName"
+                    android:background="@color/light_grey"
+                    android:textColor="@color/dark_text"
+                    android:textColorHint="@color/green_light"
+                    android:paddingHorizontal="12.dp"
+                    android:layout_marginTop="4.dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email Address"
+                    android:textSize="13.sp"
+                    android:textColor="@color/green_light"
+                    android:layout_marginTop="12.dp" />
+
+                <EditText
+                    android:id="@+id/etProfileEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="48.dp"
+                    android:hint="Email Address"
+                    android:inputType="textEmailAddress"
+                    android:background="@color/light_grey"
+                    android:textColor="@color/dark_text"
+                    android:textColorHint="@color/green_light"
+                    android:paddingHorizontal="12.dp"
+                    android:layout_marginTop="4.dp" />
+
+                <Button
+                    android:id="@+id/btnSaveProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="48.dp"
+                    android:text="Save Profile Info"
+                    android:backgroundTint="@color/green_primary"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="16.dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Change Password Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20.dp"
+            app:cardCornerRadius="12.dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="3.dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16.dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔒 Change Password"
+                    android:textSize="18.sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_primary" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/green_primary"
+                    android:layout_marginTop="16.dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNewPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="48.dp"
+                        android:hint="New Password"
+                        android:inputType="textPassword"
+                        android:background="@color/light_grey"
+                        android:textColor="@color/dark_text"
+                        android:textColorHint="@color/green_light"
+                        android:paddingHorizontal="12.dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/green_primary"
+                    android:layout_marginTop="12.dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etConfirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="48.dp"
+                        android:hint="Confirm New Password"
+                        android:inputType="textPassword"
+                        android:background="@color/light_grey"
+                        android:textColor="@color/dark_text"
+                        android:textColorHint="@color/green_light"
+                        android:paddingHorizontal="12.dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tvPasswordStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#D32F2F"
+                    android:visibility="gone"
+                    android:layout_marginTop="8.dp" />
+
+                <Button
+                    android:id="@+id/btnUpdatePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.dp"
+                    android:text="Update Password"
+                    android:backgroundTint="@color/orange_accent"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="16.dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>

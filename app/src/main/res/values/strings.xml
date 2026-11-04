@@ -2,13 +2,46 @@
     <string name="app_name">MealMate</string>
     <string name="logo_content_description">MealMate Logo</string>
     <string name="welcome_back">Welcome Back!</string>
+    <string name="create_account">Create Account</string>
+    <string name="full_name">Full Name</string>
     <string name="email_address">Email Address</string>
     <string name="password">Password</string>
     <string name="hide_password">Hide password</string>
     <string name="show_password">Show password</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="login">Login</string>
-    <string name="continue_with_google">Continue with Google</string>
-    <string name="dont_have_account">Don\'t have an account? </string>
+    <string name="continue_with_google">Sign in with Google</string>
+    <string name="dont_have_account">Don\'t have an account? Sign Up</string>
+    <string name="already_have_account">Already have an account? Log In</string>
     <string name="register">Register</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_planner">Planner</string>
+    <string name="nav_favorites">Favorites</string>
+    <string name="nav_settings">Settings</string>
+
+    <string name="explore_recipes">Explore Recipes</string>
+    <string name="search_hint">Search recipes or ingredients&#8230;</string>
+    <string name="trending_this_hour">🔥 Trending This Hour</string>
+    <string name="categories">Categories</string>
+    <string name="meal_planner">Meal Planner</string>
+    <string name="shopping_list">Shopping List</string>
+    <string name="select_language">Select Language</string>
+    <string name="settings">Settings</string>
+    <string name="profile">Profile</string>
+    <string name="notifications">Notifications</string>
+    <string name="language">Language</string>
+    <string name="dietary_preferences">Dietary Preferences</string>
+    <string name="sync_status">Sync Status</string>
+    <string name="online_synced">Online - Synced with Cloud</string>
+    <string name="offline_roomdb">Offline Mode - Local RoomDB Active</string>
+    <string name="logout">Logout</string>
+
+    <string name="ingredients">Ingredients</string>
+    <string name="instructions">Instructions</string>
+    <string name="add_to_meal_planner">Add to Meal Planner</string>
+    <string name="confirm_addition">Confirm Addition</string>
+    <string name="favorite_recipes">Favorite Recipes</string>
+    <string name="empty_favorites">No favorite recipes yet. Star recipes to see them here!</string>
+    <string name="shopping_list_empty">Your shopping list is empty. Add meals to your planner to generate ingredients!</string>
 </resources>

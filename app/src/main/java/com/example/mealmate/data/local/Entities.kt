@@ -3,10 +3,10 @@ package com.example.mealmate.data.local
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "favorites")
+@Entity(tableName = "favorites", primaryKeys = ["idMeal", "userId"])
 data class FavoriteMealEntity(
-    @PrimaryKey val idMeal: String,
-    val userId: String, // Added to separate user data
+    val idMeal: String,
+    val userId: String,
     val strMeal: String?,
     val strCategory: String?,
     val strArea: String?,
@@ -38,7 +38,7 @@ data class FavoriteMealEntity(
 data class MealPlanEntity(
     val day: String,
     val mealType: String,
-    val userId: String, // Added to separate user data
+    val userId: String,
     val idMeal: String,
     val strMeal: String?,
     val strCategory: String?,
@@ -65,4 +65,21 @@ data class MealPlanEntity(
     val strIngredient18: String? = null,
     val strIngredient19: String? = null,
     val strIngredient20: String? = null
+)
+
+@Entity(tableName = "pantry")
+data class PantryEntity(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    val userId: String,
+    val ingredientName: String,
+    val quantity: String
+)
+
+@Entity(tableName = "recipe_ratings")
+data class RecipeRatingEntity(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    val recipeId: String,
+    val rating: Float,
+    val review: String,
+    val timestamp: Long = System.currentTimeMillis()
 )

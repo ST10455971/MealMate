@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MealMate</string>
+    <string name="logo_content_description">Ilogo ea MealMate</string>
+    <string name="welcome_back">O Amohetsoe Hape!</string>
+    <string name="create_account">Etsa Akhaonto</string>
+    <string name="full_name">Lebitso ka Botlalo</string>
+    <string name="email_address">Aterese ea Imeile</string>
+    <string name="password">Lentsoe la Sefiri</string>
+    <string name="hide_password">Pata lentsoe la sefiri</string>
+    <string name="show_password">Bontsha lentsoe la sefiri</string>
+    <string name="forgot_password">O Lebetse Lentsoe la Sefiri?</string>
+    <string name="login">Kena</string>
+    <string name="continue_with_google">Kena ka Google</string>
+    <string name="dont_have_account">Ha u na akhaonto? Ngolisa</string>
+    <string name="already_have_account">O se o na le akhaonto? Kena</string>
+    <string name="register">Ngolisa</string>
+
+    <string name="nav_home">Gae</string>
+    <string name="nav_planner">Meralo</string>
+    <string name="nav_favorites">Tseo u li Ratang</string>
+    <string name="nav_settings">Lisebelisoa</string>
+
+    <string name="explore_recipes">Batla Liresipi</string>
+    <string name="search_hint">Batla liresipi&#8230;</string>
+    <string name="trending_this_hour">🔥 Tsa Hlooho ea Ora ena</string>
+    <string name="categories">Lihlopha</string>
+    <string name="meal_planner">Moralo oa Lijo</string>
+    <string name="shopping_list">Lethathamo la Inkopane</string>
+    <string name="select_language">Khetha Puo</string>
+    <string name="settings">Lisebelisoa</string>
+    <string name="profile">Mbili</string>
+    <string name="notifications">Tsebo</string>
+    <string name="language">Puo</string>
+    <string name="dietary_preferences">Litakatso tsa Lijo</string>
+    <string name="sync_status">Boemo ba Khokahano</string>
+    <string name="online_synced">Khokahano ea Inthanete - Sinki</string>
+    <string name="offline_roomdb">Mekhoa ea Inthanete - RoomDB</string>
+    <string name="logout">Tsoa</string>
+
+    <string name="ingredients">Lisebelisoa</string>
+    <string name="instructions">Litaelo</string>
+    <string name="add_to_meal_planner">Etsa Moralo</string>
+    <string name="confirm_addition">Netefatsa</string>
+    <string name="favorite_recipes">Liresipi tseo U li Ratang</string>
+    <string name="empty_favorites">Ha ho liresipi tseo u li ratang!</string>
+    <string name="shopping_list_empty">Lethathamo la hau la inkopane le se na letho!</string>
+</resources>

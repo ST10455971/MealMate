@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MealMate</string>
+    <string name="logo_content_description">MealMate Logo</string>
+    <string name="welcome_back">Welkom Terug!</string>
+    <string name="create_account">Skep Rekening</string>
+    <string name="full_name">Volle Naam</string>
+    <string name="email_address">E-posadres</string>
+    <string name="password">Wagwoord</string>
+    <string name="hide_password">Steek wagwoord weg</string>
+    <string name="show_password">Wys wagwoord</string>
+    <string name="forgot_password">Wagwoord vergeet?</string>
+    <string name="login">Teken in</string>
+    <string name="continue_with_google">Meld aan met Google</string>
+    <string name="dont_have_account">Het jy nie \'n rekening nie? Registreer</string>
+    <string name="already_have_account">Het jy reeds \'n rekening? Teken in</string>
+    <string name="register">Registreer</string>
+
+    <string name="nav_home">Tuis</string>
+    <string name="nav_planner">Beplanner</string>
+    <string name="nav_favorites">Gunstelinge</string>
+    <string name="nav_settings">Instellings</string>
+
+    <string name="explore_recipes">Verken Resepte</string>
+    <string name="search_hint">Soek resepte&#8230;</string>
+    <string name="trending_this_hour">🔥 Gewild Hierdie Uur</string>
+    <string name="categories">Kategorieë</string>
+    <string name="meal_planner">Maaltydbeplanner</string>
+    <string name="shopping_list">Inkopielys</string>
+    <string name="select_language">Kies Taal</string>
+    <string name="settings">Instellings</string>
+    <string name="profile">Profiel</string>
+    <string name="notifications">Kennisgewings</string>
+    <string name="language">Taal</string>
+    <string name="dietary_preferences">Dieetvoorkeure</string>
+    <string name="sync_status">Sinchronisasiestatus</string>
+    <string name="online_synced">Aanlyn - Gesinkroniseer met Wolk</string>
+    <string name="offline_roomdb">Aflynmodus - Plaaslike RoomDB</string>
+    <string name="logout">Meld af</string>
+
+    <string name="ingredients">Bestanddele</string>
+    <string name="instructions">Instruksies</string>
+    <string name="add_to_meal_planner">Voeg by Beplanner</string>
+    <string name="confirm_addition">Bevestig Byvoeging</string>
+    <string name="favorite_recipes">Gunsteling Resepte</string>
+    <string name="empty_favorites">Nog geen gunsteling resepte nie!</string>
+    <string name="shopping_list_empty">Jou inkopielys is leeg!</string>
+</resources>

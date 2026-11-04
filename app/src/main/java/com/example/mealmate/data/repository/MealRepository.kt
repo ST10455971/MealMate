@@ -3,7 +3,10 @@ package com.example.mealmate.data.repository
 import com.example.mealmate.data.local.FavoriteMealEntity
 import com.example.mealmate.data.local.MealDao
 import com.example.mealmate.data.local.MealPlanEntity
+import com.example.mealmate.data.local.PantryEntity
+import com.example.mealmate.data.local.RecipeRatingEntity
 import com.example.mealmate.data.model.Meal
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class MealRepository(private val mealDao: MealDao) {
@@ -19,6 +22,24 @@ class MealRepository(private val mealDao: MealDao) {
             dayMap[entity.mealType] = entity.toMeal()
         }
         map
+    }
+
+    fun getPantryItems(userId: String): Flow<List<PantryEntity>> =
+        mealDao.getPantryItems(userId)
+
+    suspend fun addPantryItem(userId: String, ingredientName: String, quantity: String) {
+        mealDao.insertPantryItem(PantryEntity(userId = userId, ingredientName = ingredientName, quantity = quantity))
+    }
+
+    suspend fun removePantryItem(item: PantryEntity) {
+        mealDao.deletePantryItem(item)
+    }
+
+    fun getRecipeRatings(recipeId: String): Flow<List<RecipeRatingEntity>> =
+        mealDao.getRecipeRatings(recipeId)
+
+    suspend fun addRecipeRating(recipeId: String, rating: Float, review: String) {
+        mealDao.insertRecipeRating(RecipeRatingEntity(recipeId = recipeId, rating = rating, review = review))
     }
 
     suspend fun addFavorite(userId: String, meal: Meal) {
@@ -38,7 +59,6 @@ class MealRepository(private val mealDao: MealDao) {
     }
 }
 
-// Extension functions for mapping
 fun Meal.toFavoriteEntity(userId: String) = FavoriteMealEntity(
     idMeal, userId, strMeal, strCategory, strArea, strInstructions, strMealThumb,
     strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5,

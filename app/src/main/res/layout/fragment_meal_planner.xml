@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cream_background"
+    android:padding="16.dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/meal_planner"
+        android:textSize="24.sp"
+        android:textStyle="bold"
+        android:textColor="@color/green_primary" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCalendarDates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12.dp" />
+
+    <TextView
+        android:id="@+id/tvSelectedDayTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16.sp"
+        android:textStyle="bold"
+        android:textColor="@color/green_light"
+        android:layout_marginTop="16.dp"
+        android:layout_marginBottom="8.dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMealPlan"
+        android:layout_width="match_parent"
+        android:layout_height="0.dp"
+        android:layout_weight="1" />
+</LinearLayout>

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="250.dp">
+
+            <ImageView
+                android:id="@+id/ivRecipeImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="Recipe Detail Image" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="44.dp"
+                android:layout_height="44.dp"
+                android:layout_margin="16.dp"
+                app:cardCornerRadius="22.dp"
+                app:cardElevation="6.dp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="0.dp">
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_arrow_back"
+                    android:contentDescription="Back" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="44.dp"
+                android:layout_height="44.dp"
+                android:layout_gravity="end|bottom"
+                android:layout_margin="16.dp"
+                app:cardCornerRadius="22.dp"
+                app:cardElevation="6.dp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="0.dp">
+
+                <ImageButton
+                    android:id="@+id/btnFavorite"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_heart_outline"
+                    android:contentDescription="Favorite" />
+            </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16.dp">
+
+            <TextView
+                android:id="@+id/tvRecipeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22.sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_primary" />
+
+            <TextView
+                android:id="@+id/tvRecipeCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14.sp"
+                android:textColor="@color/green_light"
+                android:layout_marginTop="4.dp" />
+
+            <!-- Servings & Cooking Time Info Bar (Matching Reference Image) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="10.dp"
+                android:layout_marginTop="8.dp">
+
+                <!-- Servings Selector -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="22.dp"
+                        android:layout_height="22.dp"
+                        android:src="@drawable/ic_cutlery"
+                        app:tint="@color/dark_text"
+                        android:contentDescription="Servings Icon" />
+
+                    <ImageButton
+                        android:id="@+id/btnDecreaseServings"
+                        android:layout_width="28.dp"
+                        android:layout_height="28.dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@android:drawable/ic_media_previous"
+                        android:contentDescription="Decrease Servings"
+                        android:layout_marginStart="6.dp" />
+
+                    <TextView
+                        android:id="@+id/tvServingsCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2 servings"
+                        android:textSize="15.sp"
+                        android:textColor="@color/dark_text"
+                        android:paddingHorizontal="4.dp" />
+
+                    <ImageButton
+                        android:id="@+id/btnIncreaseServings"
+                        android:layout_width="28.dp"
+                        android:layout_height="28.dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@android:drawable/ic_media_next"
+                        android:contentDescription="Increase Servings" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="28.dp"
+                    android:layout_height="wrap_content" />
+
+                <!-- Cooking Time -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="22.dp"
+                        android:layout_height="22.dp"
+                        android:src="@drawable/ic_clock"
+                        app:tint="@color/dark_text"
+                        android:contentDescription="Cooking Time Icon" />
+
+                    <TextView
+                        android:id="@+id/tvCookingTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15 minutes"
+                        android:textSize="15.sp"
+                        android:textColor="@color/dark_text"
+                        android:layout_marginStart="8.dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@color/dark_text"
+                android:layout_marginBottom="16.dp" />
+
+            <!-- Start Cooking Mode Button -->
+            <Button
+                android:id="@+id/btnCookingMode"
+                android:layout_width="match_parent"
+                android:layout_height="50.dp"
+                android:text="Start Cooking Mode 👨‍🍳"
+                android:backgroundTint="@color/green_primary"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ingredients"
+                android:textSize="18.sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_primary"
+                android:layout_marginTop="16.dp" />
+
+            <TextView
+                android:id="@+id/tvIngredientsList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15.sp"
+                android:textColor="@color/dark_text"
+                android:layout_marginTop="8.dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/instructions"
+                android:textSize="18.sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_primary"
+                android:layout_marginTop="16.dp" />
+
+            <TextView
+                android:id="@+id/tvInstructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15.sp"
+                android:textColor="@color/dark_text"
+                android:layout_marginTop="8.dp" />
+
+            <!-- Meal Planner Add Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_to_meal_planner"
+                android:textSize="18.sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_primary"
+                android:layout_marginTop="20.dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8.dp">
+
+                <Spinner
+                    android:id="@+id/spDay"
+                    android:layout_width="0.dp"
+                    android:layout_height="48.dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:layout_marginEnd="8.dp" />
+
+                <Spinner
+                    android:id="@+id/spType"
+                    android:layout_width="0.dp"
+                    android:layout_height="48.dp"
+                    android:background="@color/white"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnAddMealPlan"
+                android:layout_width="match_parent"
+                android:layout_height="50.dp"
+                android:text="@string/confirm_addition"
+                android:backgroundTint="@color/orange_accent"
+                android:textColor="@color/white"
+                android:layout_marginTop="12.dp" />
+
+            <!-- Recipe Rating & Reviews Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⭐ Ratings &amp; Reviews"
+                android:textSize="18.sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_primary"
+                android:layout_marginTop="24.dp" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="5"
+                android:stepSize="1"
+                android:layout_marginTop="8.dp" />
+
+            <EditText
+                android:id="@+id/etReview"
+                android:layout_width="match_parent"
+                android:layout_height="60.dp"
+                android:hint="Write your review or notes..."
+                android:background="@color/white"
+                android:textColor="@color/dark_text"
+                android:textColorHint="@color/green_light"
+                android:padding="8.dp"
+                android:layout_marginTop="8.dp" />
+
+            <Button
+                android:id="@+id/btnSubmitReview"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit Review"
+                android:textColor="@color/green_primary"
+                android:layout_marginTop="8.dp" />
+
+            <TextView
+                android:id="@+id/tvRatingsSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14.sp"
+                android:textColor="@color/dark_text"
+                android:layout_marginTop="12.dp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
