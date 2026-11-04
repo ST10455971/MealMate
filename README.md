@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 MealMate – Recipe & Meal Planner
 
 OPSC6312 Part 3 – Android Prototype Development
