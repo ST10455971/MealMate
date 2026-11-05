@@ -2,17 +2,19 @@ name: MealMate Android CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
-    branches: [ "main" ]
+    branches: [main]
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Check out repository
         uses: actions/checkout@v4
 
       - name: Set up JDK 21
@@ -24,27 +26,40 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Install required Android SDK packages
+        run: |
+          yes | sdkmanager --licenses
+          sdkmanager "platform-tools" "platforms;android-37" "build-tools;37.0.0" "cmdline-tools;latest"
+
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Grant permission to Gradle
-        run: chmod +x gradlew
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
 
-      - name: Run Unit Tests
+      - name: Run unit tests
         run: ./gradlew testDebugUnitTest
 
-      - name: Build Debug APK
+      - name: Run Android lint
+        run: ./gradlew lintDebug
+
+      - name: Build debug APK
         run: ./gradlew assembleDebug
 
-      - name: Upload Test Reports
+      - name: Upload debug APK
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: MealMate-debug-APK
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+
+      - name: Upload test and lint reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: MealMate-Test-Reports
-          path: app/build/reports/tests/testDebugUnitTest/
-
-      - name: Upload Debug APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: MealMate-Debug-APK
-          path: app/build/outputs/apk/debug/app-debug.apk
+          name: MealMate-reports
+          path: |
+            app/build/reports/tests/testDebugUnitTest/
+            app/build/reports/lint-results-debug.html
+          if-no-files-found: ignore
