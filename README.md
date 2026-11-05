@@ -46,24 +46,6 @@ REST API Used
 
 TheMealDB API provides recipe information including recipe names, ingredients, categories, cuisines, and cooking instructions.
 
-Screenshots
-![splash.jpeg](images/splash.jpeg)
-![login.jpeg](images/login.jpeg)
-![register.jpeg](images/register.jpeg)
-![home.jpeg](images/home.jpeg)
-![meal planner.jpeg](images/meal%20planner.jpeg)
-![recipe.jpeg](images/recipe.jpeg)
-![shopping list.jpeg](images/shopping%20list.jpeg)
-![shopping list1.jpeg](images/shopping%20list1.jpeg)
-![favorite.jpeg](images/favorite.jpeg)
-![settings.jpeg](images/settings.jpeg)
-![settings1.jpeg](images/settings1.jpeg)
-![user profile.jpeg](images/user%20profile.jpeg)
-![pantry tracker.jpeg](images/pantry%20tracker.jpeg)
-![dietary preferences.jpeg](images/dietary%20preferences.jpeg)
-![budget tracker.jpeg](images/budget%20tracker.jpeg)
-
-
 ##  Additional Features
 
 ###  1. Recipe Exploration & Hourly Trending
