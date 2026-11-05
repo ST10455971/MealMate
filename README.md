@@ -223,3 +223,6 @@ This project uses **GitHub Actions** (`.github/workflows/android-ci.yml`) to aut
 - Test report and APK artifact uploads
 
 ---
+Video presentation:
+link:https://youtu.be/WJNUQKABMfk?feature=shared 
+
