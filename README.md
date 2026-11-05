@@ -1,88 +1,81 @@
-MealMate – Recipe & Meal Planner
+# 🍲 MealMate – Recipe & Meal Planner
 
-OPSC6312 Part 3 – Android Prototype Development
+**OPSC6312 Part 3 – Android Prototype Development**
 
-Student Information
+### Student Information
+- **Student Name**: Sisanda Makhanye
+- **Student Number**: ST10455971
+- **Group**: 14
+- **Module**: OPSC6312
+- **Project**: MealMate – Recipe & Meal Planner
 
-Student Name: Sisanda Makhanye
+---
 
-Student Number: ST10455971
+## 📱 Application Screenshots
 
-Group: 14
+| Splash Screen | Login | Register |
+| :---: | :---: | :---: |
+| <img src="images/splash.jpeg" width="230"/> | <img src="images/login.jpeg" width="230"/> | <img src="images/register.jpeg" width="230"/> |
 
-Module: OPSC6312
+| Home Dashboard | Recipe Details | Meal Planner |
+| :---: | :---: | :---: |
+| <img src="images/home.jpeg" width="230"/> | <img src="images/recipe.jpeg" width="230"/> | <img src="images/meal%20planner.jpeg" width="230"/> |
 
-Project: MealMate – Recipe & Meal Planner
+| Grouped Shopping List | Favorite Recipes | Settings |
+| :---: | :---: | :---: |
+| <img src="images/shopping%20list.jpeg" width="230"/> | <img src="images/favorite.jpeg" width="230"/> | <img src="images/settings.jpeg" width="230"/> |
 
-Overview
+| User Profile | Pantry Tracker | Weekly Budget Tracker |
+| :---: | :---: | :---: |
+| <img src="images/user%20profile.jpeg" width="230"/> | <img src="images/pantry%20tracker.jpeg" width="230"/> | <img src="images/budget%20tracker.jpeg" width="230"/> |
+
+---
+
+## 📖 Overview
 
 MealMate is an Android recipe and meal-planning application developed using Kotlin in Android Studio. The application integrates with TheMealDB REST API to allow users to search for recipes, view recipe details, save favourite recipes, plan meals, and manage shopping lists.
 
-Main Features
+Built strictly using **100% Native Android XML ViewBinding and Kotlin Fragments** following clean architecture patterns.
 
-* User Registration
-* Secure Login
-* Dashboard with Recipe Search
-* REST API Integration (TheMealDB)
-* Recipe Details
-* Favourite Recipes
-* Weekly Meal Planner
-* Shopping List
-* User Settings
-* Dietary preferences
-* Logout
+---
 
-Technologies Used
+## 🌟 Key Features
 
-* Kotlin
-* Android Studio
-* Retrofit
-* Firebase Authentication
-* TheMealDB REST API
-* Room DATABASE
-* GitHub Actions
-
-REST API Used
-
-TheMealDB API provides recipe information including recipe names, ingredients, categories, cuisines, and cooking instructions.
-
-##  Additional Features
-
-###  1. Recipe Exploration & Hourly Trending
+### 🔍 1. Recipe Exploration & Hourly Trending
 - **Real-Time Search**: Search thousands of recipes by name or ingredient with smooth typing debounce.
 - **Category Filtering**: Instant filtering by popular categories including *Chicken*, *Beef*, *Seafood*, *Vegetarian*, and *Pasta*.
 - **Hourly Trending Recipes**: Dynamic "Trending This Hour" section that automatically rotates curated recipe collections every hour based on the time of day.
 
-###  2. Calendar-Based Meal Planner
+### 📅 2. Calendar-Based Meal Planner
 - **Interactive Top Calendar**: View and select dates of the current week with a horizontal calendar selector.
 - **Categorized Slots**: Plan *Breakfast*, *Lunch*, *Dinner*, and *Dessert* for any selected date.
 - **Seamless Addition**: Add any recipe directly into your meal planner with one tap.
 
-###  3. Grouped Shopping List with Persistence
+### 🛒 3. Grouped Shopping List with Persistence
 - **Recipe-Grouped Ingredients**: Ingredients are automatically aggregated from planned meals and grouped cleanly under their recipe title and scheduled day.
 - **Interactive Check-Off**: Mark off items with strike-through styling.
 - **Persistent Checked State**: Checked items stay saved in `SharedPreferences` across app restarts.
 
-###  4. Cooking Mode & Kitchen Timer
+### 👨‍🍳 4. Cooking Mode & Kitchen Timer
 - **Step-by-Step Cooking Guide**: Step through recipe instructions with interactive Previous/Next controls.
 - **Built-In Countdown Timer**: Kitchen timer with quick preset buttons (`+1m`, `+5m`, `+10m`) and Start/Pause/Reset controls.
 
-###  5. Serving-Size Calculator
+### 📊 5. Serving-Size Calculator
 - **Dynamic Quantity Scaling**: Interactive `-` and `+` serving size controls scale ingredient quantities dynamically (e.g., scaling from 2 to 4 servings).
 
-###  6. Pantry Ingredient Tracker
+### 🧺 6. Pantry Ingredient Tracker
 - **Kitchen Inventory**: Add, view, and manage ingredients you already have at home with custom quantities.
 - **RoomDB Persistence**: Pantry items save directly to the local SQLite/Room database.
 
-###  7. Recipe Ratings & Reviews
+### ⭐ 7. Recipe Ratings & Reviews
 - **Star Ratings**: Rate recipes (1–5 stars) and write custom review notes.
 - **Community Summaries**: View average rating scores and review comments on recipe detail pages.
 
-###  8. Weekly Meal Budget Tracker
+### 💰 8. Weekly Meal Budget Tracker
 - **Grocery Budget Limits**: Set a target weekly budget limit (in ZAR R).
 - **Meal Cost Estimations**: Track estimated costs of planned meals and monitor remaining budget with a visual progress bar.
 
-###  9. South African Multi-Language Support
+### 🇿🇦 9. South African Multi-Language Support
 - **5 Supported Languages**:
   - 🇿🇦 **English** (`en`)
   - 🇿🇦 **isiZulu** (`zu`)
@@ -91,27 +84,27 @@ TheMealDB API provides recipe information including recipe names, ingredients, c
   - 🇿🇦 **Sesotho** (`st`)
 - **Dynamic Locale Switching**: Instantly re-inflates the application in the selected language.
 
-###  10. Security & Single Sign-On (SSO)
+### 🔐 10. Security & Single Sign-On (SSO)
 - **Password Encryption**: SHA-256 password hashing with salt.
 - **Password Visibility Toggle**: Interactive show/hide eye toggle (`TextInputLayout`).
 - **Strict Validation**: Enforces 8+ characters, numeric digits, and special characters.
 - **Google Single Sign-On (SSO)**: Native Google Account Chooser integration via `GoogleSignInClient` and Firebase Auth.
 
-###  11. Real-Time Notifications
+### 🔔 11. Real-Time Notifications
 - **5 Custom Alert Channels**:
-  -  **Recipe of the Day**: Daily recommendations tailored to user tastes.
-  -  **Meal Plan Reminders**: Scheduled alerts for planned meal menus.
-  -  **Seasonal & Holiday Dishes**: Festive menu ideas for upcoming holidays.
-  -  **Re-engagement Prompts**: Quick 15-minute meal suggestions.
-  -  **Saved Recipe Updates**: Notifications when saved recipes get featured.
+  - 🍽️ **Recipe of the Day**: Daily recommendations tailored to user tastes.
+  - ⏰ **Meal Plan Reminders**: Scheduled alerts for planned meal menus.
+  - 🎃 **Seasonal & Holiday Dishes**: Festive menu ideas for upcoming holidays.
+  - ⚡ **Re-engagement Prompts**: Quick 15-minute meal suggestions.
+  - 🌟 **Saved Recipe Updates**: Notifications when saved recipes get featured.
 
-###  12. Offline Mode & RoomDB Sync
+### 📶 12. Offline Mode & RoomDB Sync
 - **Full Offline Availability**: Favorites, Meal Plans, and Pantry items persist locally using Android Room DB.
 - **Connectivity Monitoring**: Real-time status indicator showing *"Online - Synced with Cloud"* or *"Offline Mode - Local RoomDB Active"*.
 
 ---
 
-##  Tech Stack & Libraries
+## 🛠 Tech Stack & Libraries
 
 - **Language**: Kotlin 2.0
 - **UI Architecture**: Native Android XML Views with **ViewBinding** (No Jetpack Compose)
@@ -125,7 +118,7 @@ TheMealDB API provides recipe information including recipe names, ingredients, c
 
 ---
 
-##  Project Structure
+## 📂 Project Structure
 
 ```
 com.example.mealmate/
@@ -170,12 +163,12 @@ com.example.mealmate/
 │   └── SplashFragment.kt
 │
 ├── ui/
-│   ├── theme/ (Color & Theme definitions)
 │   └── viewmodel/
 │       └── MealViewModel.kt
 │
 └── utils/
     ├── LocaleHelper.kt
+    ├── MealMateInputValidator.kt
     ├── NotificationHelper.kt
     ├── PasswordUtils.kt
     └── PreferenceHelper.kt
@@ -183,7 +176,7 @@ com.example.mealmate/
 
 ---
 
-##  Color Palette
+## 🎨 Color Palette
 
 | Color Name | Hex Code | Usage |
 | :--- | :--- | :--- |
@@ -197,10 +190,10 @@ com.example.mealmate/
 
 ---
 
-##  Building & Running
+## 🚀 Building & Running
 
 ### Prerequisites
-- Android Studio 2026.1.4+ (or Ladybug/Koala+)
+- Android Studio 2026.1.4+
 - JDK 17 or JDK 21
 - Android SDK 34+
 
@@ -221,33 +214,22 @@ cd MealMate
 
 ---
 
-##  Continuous Integration (CI)
+## ⚙️ Continuous Integration (CI)
 
 This project uses **GitHub Actions** (`.github/workflows/android-ci.yml`) to automatically build and test on every push or pull request to the `main` branch:
-- Automated checkout & JDK 21 setup
+- Automated checkout & JDK 17 setup
 - Unit test execution (`testDebugUnitTest`)
 - Debug APK assembly (`assembleDebug`)
 - Test report and APK artifact uploads
 
 ---
 
-##  License
+## 🎥 Video Demonstration
 
-This project is developed as part of an Android Application Development assignment. All rights reserved.
+- **Video Demonstration Link**: [MealMate App Demo on YouTube](https://youtu.be/uw0j5gIsFJY?si=jVCWgZDaAU8blkmE)
 
 ---
 
-##  Video Demonstration
+## 📄 License
 
-Video Link: https://youtu.be/uw0j5gIsFJY?si=jVCWgZDaAU8blkmE
-
-Installation
-
-1. Install the APK.
-2. Open MealMate.
-3. Register or log in.
-4. Search recipes and explore the application.
-
-Project Status
-
-This project represents the completed prototype for OPSC6312 Part 2.
+This project is developed as part of an Android Application Development assignment (OPSC6312). All rights reserved.
