@@ -234,9 +234,10 @@ This project uses **GitHub Actions** (`.github/workflows/android-ci.yml`) to aut
 ##  License
 
 This project is developed as part of an Android Application Development assignment. All rights reserved.
->>>>>>> a8c0291 (Update README.md, GitHub Actions CI, and complete MealMate features)
->
-Video Demonstration
+
+---
+
+##  Video Demonstration
 
 Video Link: https://youtu.be/uw0j5gIsFJY?si=jVCWgZDaAU8blkmE
 

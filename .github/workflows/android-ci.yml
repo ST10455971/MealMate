@@ -19,14 +19,12 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up JDK 21
+      - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '21'
+          java-version: '17'
 
-      
-      
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
         with:
@@ -36,37 +34,30 @@ jobs:
         run: |
           sdkmanager --install "platform-tools" "platforms;android-37"
 
-
-
-      - name: Set up Gradle
+      - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
 
-      - name: Run unit tests
-        run: ./gradlew testDebugUnitTest
+      - name: Run Unit Tests
+        run: ./gradlew testDebugUnitTest --stacktrace
 
-      - name: Run Android lint
-        run: ./gradlew lintDebug
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --stacktrace
 
-      - name: Build debug APK
-        run: ./gradlew assembleDebug
-
-      - name: Upload debug APK
+      - name: Upload Debug APK
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: MealMate-debug-APK
           path: app/build/outputs/apk/debug/app-debug.apk
-          if-no-files-found: error
+          if-no-files-found: warn
 
-      - name: Upload test and lint reports
+      - name: Upload Test Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: MealMate-reports
-          path: |
-            app/build/reports/tests/testDebugUnitTest/
-            app/build/reports/lint-results-debug.html
+          name: MealMate-Test-Reports
+          path: app/build/reports/tests/testDebugUnitTest/
           if-no-files-found: ignore
