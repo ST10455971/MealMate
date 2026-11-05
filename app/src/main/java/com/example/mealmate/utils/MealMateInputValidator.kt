@@ -1,10 +1,13 @@
+
 package com.example.mealmate.utils
 
 object MealMateInputValidator {
 
     fun isValidEmail(email: String): Boolean {
-        return android.util.Patterns.EMAIL_ADDRESS
-            .matcher(email.trim()).matches()
+        val emailPattern =
+            Regex("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")
+
+        return emailPattern.matches(email.trim())
     }
 
     fun isValidPassword(password: String): Boolean {
