@@ -198,17 +198,18 @@ class RecipeDetailFragment : Fragment() {
     }
 
     private fun observeRatings(id: String) {
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.getRecipeRatings(id).collect { ratings ->
+                val currentBinding = _binding ?: return@collect
                 if (ratings.isEmpty()) {
-                    binding.tvRatingsSummary.text = "No reviews yet. Be the first to review!"
+                    currentBinding.tvRatingsSummary.text = "No reviews yet. Be the first to review!"
                 } else {
                     val avg = ratings.map { it.rating }.average()
                     val summaryText = StringBuilder(String.format("Average Rating: %.1f ⭐ (%d reviews)\n\n", avg, ratings.size))
                     ratings.take(3).forEach { r ->
                         summaryText.append("• ${r.rating.toInt()}★: \"${r.review.ifBlank { "No comment" }}\"\n")
                     }
-                    binding.tvRatingsSummary.text = summaryText.toString()
+                    currentBinding.tvRatingsSummary.text = summaryText.toString()
                 }
             }
         }

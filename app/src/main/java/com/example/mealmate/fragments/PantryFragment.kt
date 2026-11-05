@@ -59,14 +59,15 @@ class PantryFragment : Fragment() {
             }
         }
 
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.pantryItems.collect { items ->
+                val currentBinding = _binding ?: return@collect
                 if (items.isEmpty()) {
-                    binding.tvEmptyPantry.visibility = View.VISIBLE
-                    binding.rvPantry.visibility = View.GONE
+                    currentBinding.tvEmptyPantry.visibility = View.VISIBLE
+                    currentBinding.rvPantry.visibility = View.GONE
                 } else {
-                    binding.tvEmptyPantry.visibility = View.GONE
-                    binding.rvPantry.visibility = View.VISIBLE
+                    currentBinding.tvEmptyPantry.visibility = View.GONE
+                    currentBinding.rvPantry.visibility = View.VISIBLE
                     adapter.updateItems(items)
                 }
             }

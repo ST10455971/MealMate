@@ -49,14 +49,15 @@ class FavouriteFragment : Fragment() {
         binding.rvFavorites.layoutManager = LinearLayoutManager(requireContext())
         binding.rvFavorites.adapter = adapter
 
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.favorites.collect { favorites ->
+                val currentBinding = _binding ?: return@collect
                 if (favorites.isEmpty()) {
-                    binding.tvEmptyFavorites.visibility = View.VISIBLE
-                    binding.rvFavorites.visibility = View.GONE
+                    currentBinding.tvEmptyFavorites.visibility = View.VISIBLE
+                    currentBinding.rvFavorites.visibility = View.GONE
                 } else {
-                    binding.tvEmptyFavorites.visibility = View.GONE
-                    binding.rvFavorites.visibility = View.VISIBLE
+                    currentBinding.tvEmptyFavorites.visibility = View.GONE
+                    currentBinding.rvFavorites.visibility = View.VISIBLE
                     adapter.updateData(favorites, favorites)
                 }
             }

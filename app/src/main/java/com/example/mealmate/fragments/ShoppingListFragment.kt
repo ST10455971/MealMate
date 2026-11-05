@@ -55,8 +55,9 @@ class ShoppingListFragment : Fragment() {
         binding.rvShoppingList.layoutManager = LinearLayoutManager(requireContext())
         binding.rvShoppingList.adapter = adapter
 
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.mealPlans.collect { mealPlans ->
+                val currentBinding = _binding ?: return@collect
                 val shoppingList = mutableListOf<ShoppingListItem>()
 
                 mealPlans.forEach { (day, types) ->
@@ -84,11 +85,11 @@ class ShoppingListFragment : Fragment() {
                 }
 
                 if (shoppingList.isEmpty()) {
-                    binding.tvEmptyShopping.visibility = View.VISIBLE
-                    binding.rvShoppingList.visibility = View.GONE
+                    currentBinding.tvEmptyShopping.visibility = View.VISIBLE
+                    currentBinding.rvShoppingList.visibility = View.GONE
                 } else {
-                    binding.tvEmptyShopping.visibility = View.GONE
-                    binding.rvShoppingList.visibility = View.VISIBLE
+                    currentBinding.tvEmptyShopping.visibility = View.GONE
+                    currentBinding.rvShoppingList.visibility = View.VISIBLE
                     adapter.updateItems(shoppingList)
                 }
             }

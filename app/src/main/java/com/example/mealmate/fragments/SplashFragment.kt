@@ -32,8 +32,11 @@ class SplashFragment : Fragment() {
         (activity as? MainActivity)?.showBottomNavigation(false)
 
         Handler(Looper.getMainLooper()).postDelayed({
+            val currentContext = context ?: return@postDelayed
+            if (!isAdded) return@postDelayed
+
             val firebaseUser = FirebaseAuth.getInstance().currentUser
-            val isLoggedInPref = PreferenceHelper.isLoggedIn(requireContext())
+            val isLoggedInPref = PreferenceHelper.isLoggedIn(currentContext)
             val mainActivity = activity as? MainActivity
             if (firebaseUser != null || isLoggedInPref) {
                 mainActivity?.showBottomNavigation(true)

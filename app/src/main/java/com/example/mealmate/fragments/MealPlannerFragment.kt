@@ -119,9 +119,11 @@ class MealPlannerFragment : Fragment() {
     }
 
     private fun observeMealPlans() {
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.mealPlans.collect {
-                refreshSlots()
+                if (_binding != null) {
+                    refreshSlots()
+                }
             }
         }
     }

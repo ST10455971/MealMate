@@ -57,9 +57,11 @@ class BudgetFragment : Fragment() {
             }
         }
 
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.mealPlans.collect {
-                calculateAndDisplayBudget()
+                if (_binding != null) {
+                    calculateAndDisplayBudget()
+                }
             }
         }
     }

@@ -91,7 +91,7 @@ class DashboardFragment : Fragment() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 val query = s.toString().trim()
                 searchJob?.cancel()
-                searchJob = lifecycleScope.launch {
+                searchJob = viewLifecycleOwner.lifecycleScope.launch {
                     delay(300)
                     if (query.length >= 2) {
                         viewModel.searchRecipes(query)
@@ -114,12 +114,12 @@ class DashboardFragment : Fragment() {
         val currentHourIndex = ((System.currentTimeMillis() / (1000 * 3600)) % trendingCategories.size).toInt()
         val trendingQuery = trendingCategories[currentHourIndex]
 
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             try {
                 val repository = RecipeRepository()
                 val response = repository.searchRecipes(trendingQuery)
                 val meals = response.meals ?: emptyList()
-                if (meals.isNotEmpty()) {
+                if (meals.isNotEmpty() && _binding != null) {
                     trendingAdapter.updateMeals(meals.take(6))
                 }
             } catch (_: Exception) {
@@ -128,7 +128,8 @@ class DashboardFragment : Fragment() {
     }
 
     private fun filterByDietaryPreferences(meals: List<Meal>): List<Meal> {
-        val prefs = PreferenceHelper.getDietaryPreferences(requireContext())
+        val ctx = context ?: return meals
+        val prefs = PreferenceHelper.getDietaryPreferences(ctx)
         if (prefs.isEmpty()) return meals
 
         val filtered = meals.filter { meal ->
@@ -151,35 +152,38 @@ class DashboardFragment : Fragment() {
             viewModel.searchRecipes("Chicken")
         }
 
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.searchResults.collect { results ->
+                if (_binding == null) return@collect
                 val favs = viewModel.favorites.value
                 val filteredList = filterByDietaryPreferences(results)
                 recipeAdapter.updateData(filteredList, favs)
             }
         }
 
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.favorites.collect { favs ->
+                if (_binding == null) return@collect
                 val results = viewModel.searchResults.value
                 val filteredList = filterByDietaryPreferences(results)
                 recipeAdapter.updateData(filteredList, favs)
             }
         }
 
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.isLoading.collect { isLoading ->
-                binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+                _binding?.progressBar?.visibility = if (isLoading) View.VISIBLE else View.GONE
             }
         }
 
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.error.collect { err ->
+                val currentBinding = _binding ?: return@collect
                 if (err != null && viewModel.searchResults.value.isEmpty()) {
-                    binding.tvError.text = err
-                    binding.tvError.visibility = View.VISIBLE
+                    currentBinding.tvError.text = err
+                    currentBinding.tvError.visibility = View.VISIBLE
                 } else {
-                    binding.tvError.visibility = View.GONE
+                    currentBinding.tvError.visibility = View.GONE
                 }
             }
         }
@@ -187,6 +191,7 @@ class DashboardFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        searchJob?.cancel()
         _binding = null
     }
 }
