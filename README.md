@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 MealMate – Recipe & Meal Planner
 
-OPSC6312 Part 2 – Android Prototype Development
+OPSC6312 Part 3 – Android Prototype Development
 
 Student Information
 
@@ -19,7 +18,7 @@ Overview
 
 MealMate is an Android recipe and meal-planning application developed using Kotlin in Android Studio. The application integrates with TheMealDB REST API to allow users to search for recipes, view recipe details, save favourite recipes, plan meals, and manage shopping lists.
 
-Features
+Main Features
 
 * User Registration
 * Secure Login
@@ -30,6 +29,7 @@ Features
 * Weekly Meal Planner
 * Shopping List
 * User Settings
+* Dietary preferences
 * Logout
 
 Technologies Used
@@ -37,50 +37,34 @@ Technologies Used
 * Kotlin
 * Android Studio
 * Retrofit
-* Coil
-* Firebase (Project Configuration)
+* Firebase Authentication
 * TheMealDB REST API
+* Room DATABASE
+* GitHub Actions
 
 REST API Used
 
 TheMealDB API provides recipe information including recipe names, ingredients, categories, cuisines, and cooking instructions.
 
 Screenshots
-<img width="374" height="800" alt="mealplanscreen" src="https://github.com/user-attachments/assets/f70ee675-af04-40c3-bc12-1c363bcc6b99" />
-<img width="374" height="800" alt="shppongscreen" src="https://github.com/user-attachments/assets/c3dd3cc5-de21-4f5c-bd7a-a3f75be20c2d" />
-<img width="374" height="800" alt="favoritescreen" src="https://github.com/user-attachments/assets/56ed71f6-0885-402a-bb4b-8405bad78040" />
-<img width="374" height="800" alt="settingscreen" src="https://github.com/user-attachments/assets/f51d2772-f7bc-45e5-927c-da4b81839cfb" />
-<img width="374" height="800" alt="splashscreen" src="https://github.com/user-attachments/assets/c707727c-bd3f-46d6-adc3-4fc14a245573" />
-<img width="374" height="800" alt="loginscreen" src="https://github.com/user-attachments/assets/83e88ef9-725c-49e6-b818-3ca5da9e21c7" />
-<img width="374" height="800" alt="registerscreen" src="https://github.com/user-attachments/assets/7f866208-53d5-4d81-884f-7259a4dc74de" />
-<img width="374" height="800" alt="dashboardscreen" src="https://github.com/user-attachments/assets/acf87daf-5454-4cf6-98b9-3ec06a8aef21" />
-<img width="374" height="800" alt="recipescreen" src="https://github.com/user-attachments/assets/1eb221b0-a3de-47aa-8b2c-ede11a9d02b9" />
-<img width="374" height="800" alt="recipedetailscreen" src="https://github.com/user-attachments/assets/25f1a97e-d530-4c33-9393-da7ffdfd936f" />
+![splash.jpeg](images/splash.jpeg)
+![login.jpeg](images/login.jpeg)
+![register.jpeg](images/register.jpeg)
+![home.jpeg](images/home.jpeg)
+![meal planner.jpeg](images/meal%20planner.jpeg)
+![recipe.jpeg](images/recipe.jpeg)
+![shopping list.jpeg](images/shopping%20list.jpeg)
+![shopping list1.jpeg](images/shopping%20list1.jpeg)
+![favorite.jpeg](images/favorite.jpeg)
+![settings.jpeg](images/settings.jpeg)
+![settings1.jpeg](images/settings1.jpeg)
+![user profile.jpeg](images/user%20profile.jpeg)
+![pantry tracker.jpeg](images/pantry%20tracker.jpeg)
+![dietary preferences.jpeg](images/dietary%20preferences.jpeg)
+![budget tracker.jpeg](images/budget%20tracker.jpeg)
 
-Video Demonstration
 
-Video Link: https://youtu.be/uw0j5gIsFJY?si=jVCWgZDaAU8blkmE 
-
-Installation
-
-1. Install the APK.
-2. Open MealMate.
-3. Register or log in.
-4. Search recipes and explore the application.
-
-Project Status
-
-This project represents the completed prototype for OPSC6312 Part 2.
-=======
-# 🍲 MealMate - Intelligent Meal Planner & Recipe Explorer
-
-**MealMate** is a modern, feature-rich native Android application designed to help users discover delicious recipes, plan daily and weekly meals on an interactive calendar, manage kitchen pantry ingredients, track grocery budgets, and generate organized shopping lists.
-
-Built strictly using **100% Native Android XML ViewBinding and Kotlin Fragments** following clean architecture patterns.
-
----
-
-##  Key Features
+##  Additional Features
 
 ###  1. Recipe Exploration & Hourly Trending
 - **Real-Time Search**: Search thousands of recipes by name or ingredient with smooth typing debounce.
@@ -145,7 +129,7 @@ Built strictly using **100% Native Android XML ViewBinding and Kotlin Fragments*
 
 ---
 
-## 🛠 Tech Stack & Libraries
+##  Tech Stack & Libraries
 
 - **Language**: Kotlin 2.0
 - **UI Architecture**: Native Android XML Views with **ViewBinding** (No Jetpack Compose)
@@ -159,7 +143,7 @@ Built strictly using **100% Native Android XML ViewBinding and Kotlin Fragments*
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 com.example.mealmate/
@@ -217,7 +201,7 @@ com.example.mealmate/
 
 ---
 
-## 🎨 Color Palette
+##  Color Palette
 
 | Color Name | Hex Code | Usage |
 | :--- | :--- | :--- |
@@ -231,7 +215,7 @@ com.example.mealmate/
 
 ---
 
-## 🚀 Building & Running
+##  Building & Running
 
 ### Prerequisites
 - Android Studio 2026.1.4+ (or Ladybug/Koala+)
@@ -255,7 +239,7 @@ cd MealMate
 
 ---
 
-## ⚙️ Continuous Integration (CI)
+##  Continuous Integration (CI)
 
 This project uses **GitHub Actions** (`.github/workflows/android-ci.yml`) to automatically build and test on every push or pull request to the `main` branch:
 - Automated checkout & JDK 21 setup
@@ -265,7 +249,22 @@ This project uses **GitHub Actions** (`.github/workflows/android-ci.yml`) to aut
 
 ---
 
-## 📄 License
+##  License
 
 This project is developed as part of an Android Application Development assignment. All rights reserved.
 >>>>>>> a8c0291 (Update README.md, GitHub Actions CI, and complete MealMate features)
+>
+Video Demonstration
+
+Video Link: https://youtu.be/uw0j5gIsFJY?si=jVCWgZDaAU8blkmE
+
+Installation
+
+1. Install the APK.
+2. Open MealMate.
+3. Register or log in.
+4. Search recipes and explore the application.
+
+Project Status
+
+This project represents the completed prototype for OPSC6312 Part 2.
