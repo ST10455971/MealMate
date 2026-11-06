@@ -222,6 +222,31 @@ This project uses **GitHub Actions** (`.github/workflows/android-ci.yml`) to aut
 - Debug APK assembly (`assembleDebug`)
 - Test report and APK artifact uploads
 
+# Use of Artificial Intelligence Tools in GitHub and Google Play Store Publication Preparation
+
+*AI TOOLS*
+## 1. Introduction
+
+During the final stages of developing MealMate, an Android recipe and meal-planning application, I used ChatGPT and Google Gemini as supporting tools to assist with preparing the project for submission and potential publication. Their assistance focused mainly on GitHub repository management, Continuous Integration and Continuous Delivery (CI/CD), automated testing, project documentation and Google Play Store publication preparation.
+
+The tools provided explanations, troubleshooting assistance and step-by-step guidance. I remained responsible for applying the suggested changes, checking the results and ensuring that the final work met the project requirements.
+
+## 2. Use of ChatGPT
+
+ChatGPT assisted me with preparing and improving my existing MealMate GitHub repository. One practical example was creating and organising the GitHub Actions workflow file located at `.github/workflows/android-ci.yml`.
+
+ChatGPT guided me through configuring the workflow to automatically check out the repository, set up JDK 21, configure the Android SDK and prepare Gradle for building the application. It also helped me understand how to include automated unit testing using the `testDebugUnitTest` command and how to generate a debug APK using `assembleDebug`.
+
+During this process, I encountered an Android SDK configuration error because the workflow attempted to install an outdated SDK package. ChatGPT helped me investigate the error and update the Android SDK setup configuration. After making the necessary correction, the GitHub Actions workflow executed successfully.
+
+
+## 3. Use of Google Gemini
+
+Using both ChatGPT and Gemini allowed me to compare suggestions and gain a better understanding of the steps involved in preparing an application for distribution. Their assistance was particularly useful when exploring Android release configuration, version management, application signing and the requirements for generating an Android App Bundle.
+
+## 4. Conclusion
+
+Overall, ChatGPT and Google Gemini provided valuable assistance in preparing MealMate for GitHub-based project management and potential Google Play Store publication. Their guidance helped me configure GitHub Actions, understand automated testing, generate build artifacts, and learn the Android application release process. These tools supported my learning and problem-solving while I remained responsible for the implementation, verification and final project submission.
 ---
 Video presentation:
 link:https://youtu.be/WJNUQKABMfk?feature=shared 
